@@ -1,0 +1,9 @@
+import re
+v = "aeiouAEIOU"
+c = "qwrtypsdfghjklzxcvbnmQWRTYPSDFGHJKLZXCVBNM"
+pattern = r'(?<=[%s])([%s]{2,})(?=[%s])' % (c, v, c)
+match = re.findall(pattern, input())
+if match:
+    print(*match, sep='\n')
+else:
+    print(-1)
